@@ -100,3 +100,75 @@ INSERT INTO pagos_proveedores (id_proveedor, monto_total, fecha_pago, id_estado)
 
 INSERT INTO promociones (nombre_promo, porcentaje_descuento, fecha_inicio, fecha_fin) 
 VALUES ('Verano', 20.00, '2026-03-01', '2026-03-31');
+
+INSERT INTO productos (codigo, descripcion, precio_venta, id_marca, id_talle, id_temporada, id_categoria, id_proveedor, id_estado_fisico, stock) VALUES
+('VAQ-100', 'Jeans rectos clásicos', 750.00, 1, 3, 1, 2, 1, 2, 5),
+('VAQ-101', 'Vaquero nevado vintage', 890.00, 2, 2, 3, 2, 4, 3, 3),
+('VAQ-102', 'Jeans tiro bajo celeste', 690.00, 4, 1, 3, 2, 2, 2, 4),
+('VAQ-103', 'Pantalón denim gris', 950.00, 5, 4, 2, 2, 6, 1, 3),
+('VAQ-104', 'Jeans pata de elefante', 850.00, 3, 2, 1, 2, 8, 2, 2),
+('VAQ-105', 'Vaquero negro gastado', 780.00, 1, 3, 1, 2, 9, 2, 6),
+('VAQ-106', 'Mom Jean azul oscuro', 820.00, 4, 2, 2, 2, 3, 2, 4);
+
+INSERT INTO productos (codigo, descripcion, precio_venta, id_marca, id_talle, id_temporada, id_categoria, id_proveedor, id_estado_fisico, stock) VALUES
+('VES-300', 'Vestido corto de fibrana', 450.00, 8, 2, 3, 3, 3, 2, 10),
+('VES-301', 'Vestido de verano a rayas', 550.00, 1, 3, 3, 3, 5, 2, 7),
+('VES-302', 'Vestido corto negro básico', 650.00, 3, 1, 1, 3, 1, 1, 4),
+('VES-303', 'Vestido de flores primaveral', 490.00, 6, 2, 2, 3, 7, 2, 5),
+('VES-304', 'Vestido corto con volados', 520.00, 2, 4, 3, 3, 10, 2, 3),
+('VES-305', 'Vestido sport de algodón', 450.00, 5, 2, 3, 3, 4, 2, 8),
+('VES-306', 'Vestido corto seda fría', 580.00, 3, 3, 1, 3, 2, 2, 4);
+
+INSERT INTO productos (codigo, descripcion, precio_venta, id_marca, id_talle, id_temporada, id_categoria, id_proveedor, id_estado_fisico, stock) VALUES
+('CAM-400', 'Camisa blanca de oficina', 550.00, 6, 3, 1, 1, 2, 2, 6),
+('CAM-401', 'Camisa de jean clarito', 580.00, 4, 2, 2, 1, 6, 2, 4),
+('CAM-402', 'Camisa rayada celeste', 490.00, 5, 4, 1, 1, 8, 2, 5),
+('CAM-403', 'Blusa de gasa con lazo', 420.00, 3, 2, 3, 1, 9, 2, 7),
+('CAM-404', 'Camisa de lino rústico', 560.00, 10, 3, 3, 1, 1, 2, 3),
+('CAM-405', 'Blusa estampada flores', 350.00, 8, 1, 3, 1, 3, 3, 9);
+
+
+INSERT INTO productos (codigo, descripcion, precio_venta, id_marca, id_talle, id_temporada, id_categoria, id_proveedor, id_estado_fisico, stock) VALUES
+('ACC-500', 'Cinturón eco-cuero negro', 250.00, 7, 7, 1, 5, 5, 1, 12),
+('ACC-501', 'Pañuelo seda vintage', 180.00, 3, 7, 2, 5, 7, 2, 15),
+('ACC-502', 'Cartera mano marrón', 450.00, 9, 7, 1, 5, 10, 3, 2),
+('ACC-503', 'Gorro lana invierno', 290.00, 1, 7, 1, 5, 4, 1, 6);
+
+
+INSERT INTO ventas (fecha, id_cliente, total, id_metodo_pago, id_sucursal) VALUES
+('2026-01-05 10:00:00', 1, 1200.00, 1, 1),
+('2026-01-12 15:30:00', 4, 850.00, 3, 1),
+('2026-01-18 11:20:00', 6, 2500.00, 4, 2),
+('2026-01-22 17:45:00', 2, 450.00, 1, 1),
+('2026-01-29 19:00:00', 9, 1100.00, 5, 2);
+
+INSERT INTO ventas (fecha, id_cliente, total, id_metodo_pago, id_sucursal) VALUES
+('2026-02-02 10:15:00', 3, 1500.00, 2, 1),
+('2026-02-10 14:00:00', 5, 950.00, 4, 1),
+('2026-02-14 18:30:00', 7, 2200.00, 3, 2),
+('2026-02-20 11:45:00', 8, 750.00, 1, 1),
+('2026-02-26 16:00:00', 10, 1800.00, 5, 2);
+
+INSERT INTO ventas (fecha, id_cliente, total, id_metodo_pago, id_sucursal) VALUES
+('2026-03-01 09:30:00', 1, 450.00, 1, 1),
+('2026-03-05 12:00:00', 4, 1350.00, 2, 1),
+('2026-03-10 15:20:00', 6, 690.00, 4, 2),
+('2026-03-12 17:00:00', 2, 550.00, 3, 1),
+('2026-03-15 11:00:00', 9, 2100.00, 1, 2);
+
+INSERT INTO detalle_ventas (id_venta, id_producto, cantidad, precio_unitario) VALUES
+(11, 11, 1, 750.00), (11, 17, 1, 450.00),
+(12, 21, 1, 850.00),
+(13, 18, 1, 650.00), (13, 30, 1, 600.00), (13, 22, 2, 1250.00),
+(14, 17, 1, 450.00),
+(15, 20, 1, 520.00), (15, 24, 1, 580.00),
+(16, 12, 1, 890.00), (16, 25, 1, 610.00),
+(17, 14, 1, 950.00),
+(18, 18, 2, 1300.00), (18, 31, 2, 500.00),
+(19, 15, 1, 750.00),
+(20, 19, 1, 550.00), (20, 26, 1, 490.00), (20, 32, 1, 310.00),
+(21, 17, 1, 450.00),
+(22, 11, 1, 750.00), (22, 30, 1, 600.00),
+(23, 13, 1, 690.00),
+(24, 19, 1, 550.00),
+(25, 21, 2, 1700.00), (25, 29, 1, 400.00);
